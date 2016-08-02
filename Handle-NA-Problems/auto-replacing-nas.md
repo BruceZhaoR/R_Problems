@@ -1,10 +1,8 @@
-## 说明
-
-中文描述：智能填充NA
+# 智能填充NA
 
 英文描述：replacing-nas-with-latest-non-na-value，来源：http://stackoverflow.com/questions/7735647/replacing-nas-with-latest-non-na-value .
 
-### 解决办法一：tidyr::fill
+## 解决办法一：tidyr::fill
 
 ```r
 > df <- data.frame(Month = 1:6, Year = c(2000,NA,NA,3000,NA,NA))
@@ -47,7 +45,7 @@
 
 ```
 
-### 解决办法二：自己写函数
+## 解决办法二：自己写函数
 
 ```r
 
@@ -109,5 +107,7 @@
 #   3  3  3  3 4 5 5  5 5 5  5  5  5
 
 ```
+
+## 结语
 
 最后不得不说想出这个方法的人真尼玛牛逼啊！！！ 转了不知道几道弯，我理解了好半天，但是想明白后思路还是清楚的，就是将NA的索引变成智能的非NA值的索引。
