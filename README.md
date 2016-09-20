@@ -8,6 +8,7 @@
 
 2. [R连接数据库问题](https://github.com/BruceZhaoR/R_Problems/tree/master/R-Connect-Database)
     + [R连接SQLite数据库](https://github.com/BruceZhaoR/R_Problems/blob/master/R-Connect-Database/r-connect-sqlite.md)
+    + [R连接MySQL数据库及性能测试](https://github.com/BruceZhaoR/R_Problems/blob/master/R-Connect-Database/r-connect-mysql.md)
 
 3. [处理NA问题](https://github.com/BruceZhaoR/R_Problems/tree/master/Handle-NA-Problems)
     + [智能填充NA](https://github.com/BruceZhaoR/R_Problems/tree/master/Handle-NA-Problems/auto-replacing-nas.md)
