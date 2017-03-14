@@ -33,7 +33,7 @@ Encoding(test1$test)
 # 借鉴的函数，用于优化字段类型
 create_data_type <- function(fields) {
   char_type <- function(x) {
-    n <- max(nchar(as.character(x), "bytes"), 0L, na.rm = TRUE)
+    n <- 2 * max(nchar(as.character(x), "chars"), 0L, na.rm = TRUE)
     if (n <= 65535) {
       paste0("varchar(", n, ")")
     } else {
