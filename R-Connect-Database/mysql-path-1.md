@@ -2,7 +2,13 @@
 
 ### 编码问题
 
-编码与在何种操作系统上使用R有关系，如果是在Windows系统是使用R，那么需要 `dbSendQuery(conn, "set character set gb18030")`;如果在Linux系统中，默认的编码是UTF-8，那么需要`dbSendQuery(conn, "set character set utf8")`。然后用`dbGetQuery(conn,"select * from test")`就能正常显示中文字符了。
+编码与在何种操作系统上使用R有关系，
+
+- 如果是在Windows系统是使用R，那么需要 `dbSendQuery(conn, "set character set gb18030")`;
+
+- 如果在Linux系统中，默认的编码是UTF-8，那么需要`dbSendQuery(conn, "set character set utf8")`。
+
+然后用`dbGetQuery(conn,"select * from test")`就能正常显示中文字符了。
 
 **注意：** 如果是使用dplyr包的话，从数据库读出来的字符必须转为UTF-8编码的，所以还需要进行下面的转换
 
@@ -12,9 +18,9 @@ Enconding(test_enc$test)
 
 # 一次性全部变成UTF-8编码
 # linux是从UTF-8变成UTF-8
-# Windows是从gb18030变成UTF-8
-
 test1 <- test_enc %>% mutate_all(funs(str_conv(.,encoding = "UTF-8")))
+
+# Windows是从gb18030变成UTF-8
 # test1 <- test_enc %>% mutate_all(funs(str_conv(.,encoding = "gb18030")))
 
 Encoding(test1$test)
