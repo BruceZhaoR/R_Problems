@@ -27,7 +27,7 @@ Encoding(test1$test)
 ```
 ### 插入数据库的优化处理
 
-小赵发现用默认的`dbWriteTables`函数会将字符串类型设为`text`，这可能会拖慢后续的数据库查询操作。通过研究`dplyr::copy_to`函数，发现其对数据库的类型进行了优化，所有就借鉴过来了。详情请见：<https://github.com/hadley/dplyr/blob/master/R/db-mysql.r#L35-L59> 
+小赵发现用默认的`dbWriteTables`函数会将字符串类型设为`text`，这可能会拖慢后续的数据库查询操作。通过研究`dplyr::copy_to`函数，发现其对数据库的类型进行了优化，所有就借鉴过来了。详情请见：<https://github.com/tidyverse/dbplyr/blob/master/R/db-mysql.r#L35-L59> 
 
 ```R
 # 借鉴的函数，用于优化字段类型
@@ -70,4 +70,13 @@ dbExecute(conn,
 dbWriteTable(conn,"my-table",test_df,row.names=FALSE,append = TRUE)
 
 ```
+
+`dplyr`连接数据库本质是将数据写到本地csv，然后通过sql语句上传到数据。加上`character set utf-8`或许能够解决中文乱码问题。
+
+dplyr::build_sql()
+
+load data local infile 'path/to/file_name.csv'  into table my_table character set utf8;
+
+dplyr::build_sql()
+<https://github.com/tidyverse/dbplyr/blob/master/R/db-mysql.r#L93>
 
