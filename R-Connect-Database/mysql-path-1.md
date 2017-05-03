@@ -71,12 +71,15 @@ dbWriteTable(conn,"my-table",test_df,row.names=FALSE,append = TRUE)
 
 ```
 
+### 补充说明
+
 `dplyr`连接数据库本质是将数据写到本地csv，然后通过sql语句上传到数据。加上`character set utf-8`或许能够解决中文乱码问题。
 
-dplyr::build_sql()
+`dplyr::build_sql()`
 
+```sql
 load data local infile 'path/to/file_name.csv'  into table my_table character set utf8;
+````
 
-dplyr::build_sql()
 <https://github.com/tidyverse/dbplyr/blob/master/R/db-mysql.r#L93>
 
