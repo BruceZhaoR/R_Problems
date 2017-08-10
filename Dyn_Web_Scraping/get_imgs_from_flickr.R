@@ -14,6 +14,8 @@ library(httr)
 # java -jar path/to/selenium-server-standalone-3.3.0.jar
 
 # use phantomjs webdriver ------------------------------------------------
+# download here: http://phantomjs.org/download.html
+# add  `E:\ProgramFiles\phantomjs-2.1.1-windows\bin` 加到环境变量（Environment Variable）
 
 remDr <- remoteDr(browserName = "phantomjs")
 remDr
