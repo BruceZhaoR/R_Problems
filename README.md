@@ -13,7 +13,12 @@
 3. [处理NA问题](https://github.com/BruceZhaoR/R_Problems/tree/master/Handle-NA-Problems)
     + [智能填充NA](https://github.com/BruceZhaoR/R_Problems/tree/master/Handle-NA-Problems/auto-replacing-nas.md)
 
-4. ...
+4. [动态网页抓取相关](https://github.com/BruceZhaoR/R_Problems/tree/master/Dyn_Web_Scraping)    
+    + [抓取flickr图片作为壁纸](https://github.com/BruceZhaoR/R_Problems/blob/master/Dyn_Web_Scraping/something_fun_download_wallpapers.R)
+    + [模拟点击百度搜索](https://github.com/BruceZhaoR/R_Problems/blob/master/Dyn_Web_Scraping/sth_fun_baidu_click_search.R)
+    + [登录淘宝网页](https://github.com/BruceZhaoR/R_Problems/blob/master/Dyn_Web_Scraping/Rselenium.R) 有点历史，张老师贡献的 @MichaelZZG，建议大家用`seleniumPipes`这个包，配合`%>%` pipe管道符，让分析逻辑更清楚。
+
+5. ...
 
 
 ## 欢迎大家fork/PR补充！
