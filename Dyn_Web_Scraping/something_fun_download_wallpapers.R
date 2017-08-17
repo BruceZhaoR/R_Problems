@@ -23,9 +23,9 @@ now = Sys.Date()
 end_date = as.double(as.POSIXct(now))
 
 months = 1:3
-
+# 一次抓取一个月的图片，循环
 for(i in months) {
-  
+  # 照片拍摄的起止时间，用于筛选
   start_date <- end_date - 30*24*3600*(i)
   stop_date <- end_date - 30*24*3600*(i-1)
   
@@ -33,7 +33,7 @@ for(i in months) {
                 as.POSIXct(start_date,origin = "1970-01-01"),
                 as.POSIXct(stop_date,origin = "1970-01-01"))
         )
-  
+  # Flickr照片筛选选项
   elements <- list(
     tags = query_tags,
     media = "photos",
@@ -48,7 +48,7 @@ for(i in months) {
     sort = "relevance",
     view_all = "0"
   )
-  
+  # 转化为ASCII标准url格式
   query_url <- modify_url(root_url, path = "search", query = elements)
   
   remDr %>% go(query_url)
@@ -56,32 +56,28 @@ for(i in months) {
   
   web_elem <- remDr %>% findElements("css", "a.overlay")
   img_url <- lapply(web_elem, getElementAttribute, attribute = "href")
-  
-  last_img_url <- unlist(lapply(img_url, function(x) {
-      paste0(x, "sizes/k/") %>%
+  # 获取照片链接地址
+  last_img_url <- lapply(img_url, function(x) {
+    paste0(x, "sizes/o/") %>%
       read_html() %>%
       html_node(css = "#allsizes-photo img") %>%
       html_attr("src")
-      }
-    )
-  )
-  
-  img_names <- unlist(lapply(last_img_url, function(x) {
-    tail(strsplit(x, split = "/")[[1]], n = 1)
-  }))
+  })
   
   if (!dir.exists("imgs")) dir.create("imgs")
+  setwd("imgs/")
+  # 批量下载
+  lapply(last_img_url, function(x) {
+    print(sprintf("downloading:%s", x))
+    try(download.file( url = x, destfile = "imgs", 
+                   method = "curl", extra = "-O -L")
+        )
+  })
   
-  apply(data.frame(last_img_url, img_names), 1,
-        FUN = function(x) {
-          print(sprintf("downloading:%s", x[1]))
-          download.file(
-            url = x[1],
-            destfile = sprintf("imgs/%s", x[2]),
-            method = "curl")
-        }
-  )
 }
+
+setwd("../")
+getwd()
 
 # 下载完毕后删除session，关闭selenium server
 remDr %>% deleteSession
