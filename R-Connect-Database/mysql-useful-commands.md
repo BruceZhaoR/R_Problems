@@ -35,12 +35,26 @@ GRANT SELECT,,ALTER,UPDATE ON *.* TO user1@`192.168.1.2` IDENTIFIED BY 'user-pw'
 ### 建表语句
 
 ```sql
-DROP TABLE IF EXISTS `test`;
-CREATE TABLE 
-
+DROP TABLE IF EXISTS `tmp_table`;
+CREATE TABLE `tmp_table` (
+    `row_number` int(11) NOT NULL,
+    `vin` varchar(17) DEFAULT NULL,
+    `lat_start` double(9,7) DEFAULT NULL,
+    `test` float(9,6) DEFAULT NULL,
+    PRIMARY KEY (`row_number`),
+    UNIQUE KEY `row_number` (`row_number`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 ```
 
 ### 查询导出/插入
 
-
+```sql
+INSERT INTO tmp_data 
+SELECT 
+  (@row_num := @row_num + 1) AS row_number,
+  UNIX_TIMESTAMP(`UTC_START`) AS utc_start,
+  CAST(`lat_start` AS DECIMAL(9,7) AS lat_start,
+  CAST(`PLATE_NO` AS CHAR) AS plate_no
+FROM table1, (SELECT @row_num := 0) AS T;
+```
