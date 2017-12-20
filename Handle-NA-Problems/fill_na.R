@@ -38,5 +38,5 @@ fill_na.data.frame <- function(data, ...) {
 
 #' @export
 fill_na.grouped_df <- function(data, ...) {
-  dplyr::do(data, fill_na(., ...)
+  dplyr::do(data, fill_na(., ...))
 }
