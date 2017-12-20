@@ -8,5 +8,4 @@
 
 
 1. [智能填充NA](auto-replacing-nas.md)
-
-2. 
+2. [解决的R函数](fill_na.R)
