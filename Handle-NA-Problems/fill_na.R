@@ -27,7 +27,6 @@ fill_na.default <- function(data, ...) {
   data[which(a)[c(1, seq_along(which(a)))][cumsum(a) + 1]]
 }
 
-
 #' @export
 fill_na.data.frame <- function(data, ...) {
   fill_cols <- unname(tidyselect::vars_select(names(data), ...))
@@ -35,4 +34,9 @@ fill_na.data.frame <- function(data, ...) {
     data[[col]] <- fill_na(data[[col]])
   }
   data
+}
+
+#' @export
+fill_na.grouped_df <- function(data, ...) {
+  dplyr::do(data, fill_na(., ...)
 }
