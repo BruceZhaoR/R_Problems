@@ -2,7 +2,7 @@
 
 # 找出哪些包下载了，但是没有安装成功
 
-check_install_failed <- function(auto = TRUE) {
+check_install_failed <- function() {
   new_pkgs_files <- list.files(file.path(tempdir(), "downloaded_packages", fsep = "\\"))
   new_pkgs <- gsub("(?=_).*", "", new_pkgs_files, perl = TRUE)
   all_pkgs <- installed.packages()[, 1]
@@ -10,18 +10,18 @@ check_install_failed <- function(auto = TRUE) {
   if(length(to_install) == 0) {
     stop("All packages have installed well")
   } else {
-    cat(paste0("  The packages:",'\n', paste0('    "',to_install,'",',collapse = " \n"),"\n  need to be installed manually."))
+    path <- file.path(tempdir(), "downloaded_packages", fsep = "\\")
+    cat(paste0("  The packages:",'\n', paste0('    "',to_install,'",',collapse = " \n"),"\n  need to be installed manually.\n","  Please go to '",path,"' unzip manually"))
   }
   # Interactive install packages
-  if(interaction() & auto ) {
-    message("Do you want to install the packages automatically?")
+  if(interactive()) {
+    message("\n  Do you want to install the packages automatically?")
     res <- readline("y/n: ")
     if (res == "y") {
       to_install_files <- file.path(tempdir(),"downloaded_packages",new_pkgs_files[grepl(pattern = paste0(to_install, collapse = "|"),x = new_pkgs_files)], fsep= "\\")
-      install.packages(pkgs = to_install_files, repos = NULL)
+      invisible(lapply(to_install_files, FUN = install.packages, repos = NULL))
     } else {
-      path <- file.path(tempdir(), "downloaded_packages", fsep = "\\")
-      message(paste0("Please go to ",path," fold install manually"))
+      message(paste0("Please go to '",path,"' unzip manually"))
     }
   }
 }
