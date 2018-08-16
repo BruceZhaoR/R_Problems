@@ -11,10 +11,11 @@
 ## model 
 
 - [tidymodels, like tidyverse](https://github.com/tidymodels/tidymodels).
-- [caret: Classification and Regression Training.](https://cran.r-project.org/web/packages/caret/). [tutorials](https://topepo.github.io/caret/).
+- [caret: Classification and Regression Training](https://cran.r-project.org/web/packages/caret/). tutorials : <https://topepo.github.io/caret/>.
 - [mlr](https://mlr-org.github.io/mlr/).
-- [recipes](https://github.com/tidymodels/recipes). [tutorials](https://tidymodels.github.io/recipes/).
-- [model performance: yardstick](https://github.com/tidymodels/yardstick). [tutorials](https://tidymodels.github.io/yardstick/).
+- [recipes](https://github.com/tidymodels/recipes). tutorials : <https://tidymodels.github.io/recipes/>.
+- [model performance: yardstick](https://github.com/tidymodels/yardstick). tutorials : <https://tidymodels.github.io/yardstick/>.
+- [Rfast](https://cran.r-project.org/package=Rfast): A collection of Rfast functions for data analysis.
 
 
 ## books
