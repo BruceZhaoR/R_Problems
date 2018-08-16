@@ -16,6 +16,7 @@
 - [recipes](https://github.com/tidymodels/recipes). tutorials : <https://tidymodels.github.io/recipes/>.
 - [model performance: yardstick](https://github.com/tidymodels/yardstick). tutorials : <https://tidymodels.github.io/yardstick/>.
 - [Rfast](https://cran.r-project.org/package=Rfast): A collection of Rfast functions for data analysis.
+- [parsnip](https://github.com/topepo/parsnip): A tidy unified interface to models.
 
 
 ## books
