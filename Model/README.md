@@ -17,6 +17,7 @@
 - [model performance: yardstick](https://github.com/tidymodels/yardstick). tutorials : <https://tidymodels.github.io/yardstick/>.
 - [Rfast](https://cran.r-project.org/package=Rfast): A collection of Rfast functions for data analysis.
 - [parsnip](https://github.com/topepo/parsnip): A tidy unified interface to models.
+- [autoxgboost](https://github.com/ja-thomas/autoxgboost): Automatic tuning and fitting of xgboost.
 
 
 ## books
