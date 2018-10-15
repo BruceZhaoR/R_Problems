@@ -7,7 +7,8 @@
 
 ## feature select
 
-- [Boruta](https://cran.r-project.org/web/packages/Boruta/index.html)
+- [Boruta](https://cran.r-project.org/web/packages/Boruta/index.html): An all relevant feature selection wrapper algorithm. 
+- [fscaret](https://cran.r-project.org/web/packages/fscaret/index.html): Automated feature selection using variety of models provided by 'caret' package. 
 
 ## model 
 
