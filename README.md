@@ -17,8 +17,11 @@
     + [抓取flickr图片作为壁纸](https://github.com/BruceZhaoR/R_Problems/blob/master/Dyn_Web_Scraping/something_fun_download_wallpapers.R)
     + [模拟点击百度搜索](https://github.com/BruceZhaoR/R_Problems/blob/master/Dyn_Web_Scraping/sth_fun_baidu_click_search.R)
     + [登录淘宝网页](https://github.com/BruceZhaoR/R_Problems/blob/master/Dyn_Web_Scraping/Rselenium.R)，有点历史，张老师[@MichaelZZG](https://github.com/MichaelZZG)贡献的，建议大家用`seleniumPipes`这个包，配合`%>%` pipe管道符，让分析逻辑更清楚。
+    + [GET-api](https://github.com/BruceZhaoR/R_Problems/tree/master/Dyn_Web_Scraping#get) 通过GET方式获取api数据。
 
-5. ...
+5. [R包开发相关](https://github.com/BruceZhaoR/R_Problems/tree/master/Pkg-dev) 参考开发的[pjutils](https://github.com/BruceZhaoR/pjutils)
+
+6. [R模型相关](https://github.com/BruceZhaoR/R_Problems/tree/master/Model)
 
 
 ## 欢迎大家fork/PR补充！
