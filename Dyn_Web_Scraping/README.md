@@ -24,3 +24,13 @@
 
 ## 暂时先这样，有兴趣的同学自己研究吧。。。
 
+-------------------------2018-10-27-update-----------------------------
+
+## GET
+
+通过httr `GET`方式来抓取数据
+
+- 示例 (web-scraping-demo.R)[web-scraping-demo.R]
+- 链家房价数据 (httr_rvest_lianjia.R)[httr_rvest_lianjia.R]
+- 高德天气api (gaode_weather_api.R)[gaode_weather_api.R]
+- 百度ai平台，语义情感分析 (Baidu-sentiment-api.R)[Baidu-sentiment-api.R]
