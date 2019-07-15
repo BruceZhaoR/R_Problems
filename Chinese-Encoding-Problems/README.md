@@ -39,8 +39,15 @@ rawToChar(charToRaw(a))
 #> [1] "中国人"
 
 # encoding garbled
+# 其原因在于b是UTF-8编码的系统默认是以native.enc显示字符，
+# 如果不表明UTF-8的身份，打印的时候就换乱码
 rawToChar(charToRaw(b))
 #> [1] "涓浗浜\xba"
+x <- rawToChar(charToRaw(b))
+Encoding(x) <- "UTF-8"
+x
+#> [1] "中国人"
+
 
 utf8ToInt(a)
 #> [1] NA
