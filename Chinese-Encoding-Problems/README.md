@@ -4,7 +4,8 @@ Windows下，中文乱码啊啊啊。。。
 
 ## useful articles
 
-<https://kevinushey.github.io/blog/2018/02/21/string-encoding-and-r/>
+- [中文字符集编码Unicode,gb2312,cp936,GBK,GB18030](https://blog.csdn.net/zhangzhengyi03539/article/details/49308255)
+- [string-encoding-and-r](https://kevinushey.github.io/blog/2018/02/21/string-encoding-and-r/)
 
 ``` r
 icuSetCollate(locale = "zh_Hans_CN")
