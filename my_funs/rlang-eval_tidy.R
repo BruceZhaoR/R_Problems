@@ -28,3 +28,28 @@ get_plot <- function(plot_type, df, ...){
 get_plot("my_hist", diamonds, aes(x = carat,fill = cut), binwidth = 0.01)
 get_plot("my_box", df = mpg, aes(class, hwy))
 
+
+types = list(
+  hist = function(df, ...){
+    ggplot(df) +
+      geom_histogram(...)
+  },
+  box = function(df, ...){
+    ggplot(df) +
+      geom_boxplot(...)
+  }
+)
+
+get_plot = function(plot_type, df, ...){
+  my_plot = types[[plot_type]]
+  if (is.function(my_plot)) {
+    my_plot(df, ...)
+  } else {
+    print("Wrong plot_type")
+  }
+}
+
+get_plot("hist", diamonds, aes(x = carat,fill = cut), binwidth = 0.1)
+get_plot("box", df = mpg, aes(class, hwy))
+
+
