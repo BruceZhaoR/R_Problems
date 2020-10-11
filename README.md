@@ -23,6 +23,6 @@
 
 6. [R模型相关](https://github.com/BruceZhaoR/R_Problems/tree/master/Model)
 
-7. [手写有用的函数]https://github.com/BruceZhaoR/R_Problems/tree/master/my)
+7. [手写有用的函数](https://github.com/BruceZhaoR/R_Problems/tree/master/my_funs)
 
 ## 欢迎大家fork/PR补充！
